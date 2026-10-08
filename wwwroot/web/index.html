@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panel web — Correspondencia</title>
+  <link rel="stylesheet" href="/web/estilos.css" />
+</head>
+<body>
+  <header class="barra">
+    <div>
+      <p class="marca">Panel web · CU-01</p>
+      <strong>Correspondencia recibida</strong>
+    </div>
+    <a href="/">Inicio</a>
+  </header>
+
+  <main class="lienzo">
+    <section id="acceso" class="tarjeta">
+      <h1>Ingreso de secretaría</h1>
+      <p>El registro solo está disponible con sesión iniciada.</p>
+      <button id="entrar" type="button">Ingresar como secretaría</button>
+    </section>
+
+    <section id="trabajo" class="trabajo oculto">
+      <form id="formulario" class="tarjeta" novalidate>
+        <div class="encabezado-form">
+          <div>
+            <p class="marca">Sesión: Secretaría</p>
+            <h1>Nueva correspondencia</h1>
+          </div>
+          <button id="salir" type="button" class="secundario">Cerrar sesión</button>
+        </div>
+        <div id="aviso" class="aviso" role="status"></div>
+
+        <label for="remitente">Remitente</label>
+        <input id="remitente" name="remitente" type="text" maxlength="120" autocomplete="organization" />
+        <p class="error" data-error="remitente"></p>
+
+        <label for="asunto">Asunto</label>
+        <input id="asunto" name="asunto" type="text" maxlength="150" />
+        <p class="contador"><span id="cuenta">0</span> / 150</p>
+        <p class="error" data-error="asunto"></p>
+
+        <div class="fila">
+          <div>
+            <label for="tipoDocumento">Tipo de documento</label>
+            <select id="tipoDocumento" name="tipoDocumento">
+              <option value="">Seleccione</option>
+              <option>Carta</option>
+              <option>Oficio</option>
+              <option>Memo</option>
+              <option>Factura</option>
+              <option>Otro</option>
+            </select>
+            <p class="error" data-error="tipoDocumento"></p>
+          </div>
+          <div>
+            <label for="fechaRecepcion">Fecha de recepción</label>
+            <input id="fechaRecepcion" name="fechaRecepcion" type="date" />
+            <p class="error" data-error="fechaRecepcion"></p>
+          </div>
+        </div>
+
+        <button type="submit">Guardar correspondencia</button>
+      </form>
+
+      <section class="tarjeta">
+        <h2>Registros</h2>
+        <div id="vacio" class="vacio">Todavía no hay correspondencia registrada.</div>
+        <table id="tabla" class="oculto">
+          <thead>
+            <tr>
+              <th>Correlativo</th>
+              <th>Remitente</th>
+              <th>Asunto</th>
+              <th>Tipo</th>
+              <th>Fecha</th>
+            </tr>
+          </thead>
+          <tbody id="filas"></tbody>
+        </table>
+      </section>
+    </section>
+  </main>
+  <script src="/web/app.js"></script>
+</body>
+</html>

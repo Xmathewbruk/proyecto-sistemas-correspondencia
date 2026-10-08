@@ -13,7 +13,8 @@ dotnet run
 Abrir http://localhost:5080
 
 - Panel web: http://localhost:5080/web/
-- Aplicación móvil: http://localhost:5080/movil/
+
+La pantalla móvil la implementa el otro integrante, en la rama `feature/6-movil-correspondencia`, después de que este pull request quede integrado en `develop`.
 
 En ambas pantallas hay que ingresar como secretaría antes de registrar.
 
