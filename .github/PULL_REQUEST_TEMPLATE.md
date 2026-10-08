@@ -2,20 +2,20 @@
 
 HU / CU
 
-## Qué cambió
+## QuÃ© cambiÃ³
 
 -
 
-## Cómo probar
+## CÃ³mo probar
 
 1. Cambiar a esta rama.
 2. Ejecutar `dotnet run` y abrir http://localhost:5080
-3. Intentar guardar en blanco y verificar los mensajes de validación.
-4. Completar los datos y verificar la creación del registro.
+3. Intentar guardar en blanco y verificar los mensajes de validaciÃ³n.
+4. Completar los datos y verificar la creaciÃ³n del registro.
 
 ## Checklist
 
-- [ ] Cumple los criterios de aceptación.
+- [ ] Cumple los criterios de aceptaciÃ³n.
 - [ ] Probado en entorno local.
 
 Closes #

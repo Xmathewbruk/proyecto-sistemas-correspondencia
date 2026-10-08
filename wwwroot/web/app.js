@@ -30,7 +30,7 @@ function limpiarErrores() {
 function pintarErrores(errores) {
   limpiarErrores();
   aviso.className = "aviso error-general";
-  aviso.textContent = "No se guardó el registro. Revise los campos indicados.";
+  aviso.textContent = "No se guardÃ³ el registro. Revise los campos indicados.";
   errores.forEach((error) => {
     const nodo = document.querySelector(`[data-error="${error.campo}"]`);
     if (nodo) nodo.textContent = error.mensaje;
@@ -41,9 +41,9 @@ function validar(datos) {
   const errores = [];
   if (!datos.remitente.trim()) errores.push({ campo: "remitente", mensaje: "El remitente es obligatorio." });
   if (!datos.asunto.trim()) errores.push({ campo: "asunto", mensaje: "El asunto es obligatorio." });
-  else if (datos.asunto.trim().length > 150) errores.push({ campo: "asunto", mensaje: "El asunto admite como máximo 150 caracteres." });
+  else if (datos.asunto.trim().length > 150) errores.push({ campo: "asunto", mensaje: "El asunto admite como mÃ¡ximo 150 caracteres." });
   if (!datos.tipoDocumento) errores.push({ campo: "tipoDocumento", mensaje: "El tipo de documento es obligatorio." });
-  if (!datos.fechaRecepcion) errores.push({ campo: "fechaRecepcion", mensaje: "La fecha de recepción es obligatoria." });
+  if (!datos.fechaRecepcion) errores.push({ campo: "fechaRecepcion", mensaje: "La fecha de recepciÃ³n es obligatoria." });
   return errores;
 }
 
@@ -116,7 +116,7 @@ formulario.addEventListener("submit", async (evento) => {
 
   limpiarErrores();
   aviso.className = "aviso ok";
-  aviso.textContent = `${cuerpo.mensaje} Número correlativo ${cuerpo.correlativo}.`;
+  aviso.textContent = `${cuerpo.mensaje} NÃºmero correlativo ${cuerpo.correlativo}.`;
   formulario.reset();
   cuenta.textContent = "0";
   await cargarRegistros();

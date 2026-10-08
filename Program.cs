@@ -74,17 +74,17 @@ List<ErrorCampo> Validar(RegistroEntrada entrada)
     if (string.IsNullOrWhiteSpace(entrada.Asunto))
         errores.Add(new("asunto", "El asunto es obligatorio."));
     else if (entrada.Asunto.Trim().Length > 150)
-        errores.Add(new("asunto", "El asunto admite como máximo 150 caracteres."));
+        errores.Add(new("asunto", "El asunto admite como mÃ¡ximo 150 caracteres."));
 
     if (string.IsNullOrWhiteSpace(entrada.TipoDocumento))
         errores.Add(new("tipoDocumento", "El tipo de documento es obligatorio."));
     else if (!tiposValidos.Contains(entrada.TipoDocumento.Trim(), StringComparer.OrdinalIgnoreCase))
-        errores.Add(new("tipoDocumento", "El tipo de documento no es válido."));
+        errores.Add(new("tipoDocumento", "El tipo de documento no es vÃ¡lido."));
 
     if (string.IsNullOrWhiteSpace(entrada.FechaRecepcion))
-        errores.Add(new("fechaRecepcion", "La fecha de recepción es obligatoria."));
+        errores.Add(new("fechaRecepcion", "La fecha de recepciÃ³n es obligatoria."));
     else if (!DateOnly.TryParseExact(entrada.FechaRecepcion.Trim(), "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out _))
-        errores.Add(new("fechaRecepcion", "La fecha de recepción no es válida."));
+        errores.Add(new("fechaRecepcion", "La fecha de recepciÃ³n no es vÃ¡lida."));
 
     return errores;
 }

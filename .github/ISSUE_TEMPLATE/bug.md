@@ -5,7 +5,7 @@ title: Error
 labels: bug
 ---
 
-## Descripción del problema
+## DescripciÃ³n del problema
 
 ## Pasos para reproducir
 
