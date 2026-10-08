@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mockup web — Registro de correspondencia</title>
+  <style>
+    body { margin: 0; font-family: Georgia, serif; background: #ece7dc; color: #243041; }
+    .hoja { max-width: 980px; margin: 24px auto; background: #fff; border: 1px solid #cfc6b6; }
+    .nota { background: #243041; color: #fff; padding: 10px 16px; font-family: "Segoe UI", sans-serif; font-size: 13px; }
+    header { display: flex; justify-content: space-between; padding: 18px 22px; border-bottom: 1px solid #e4dccb; }
+    h1 { margin: 0; font-size: 22px; }
+    .cuerpo { display: grid; grid-template-columns: 280px 1fr; }
+    aside { padding: 18px; border-right: 1px solid #e4dccb; background: #faf8f3; }
+    main { padding: 18px 22px 28px; }
+    .campo { height: 38px; border: 1px dashed #8d97a3; margin: 8px 0 16px; }
+    .fila { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .boton { display: inline-block; margin-top: 8px; padding: 10px 14px; background: #d9d3c6; }
+    table { width: 100%; border-collapse: collapse; margin-top: 22px; font-size: 14px; }
+    td, th { border-bottom: 1px solid #e4dccb; text-align: left; padding: 8px; color: #8d97a3; }
+  </style>
+</head>
+<body>
+  <div class="hoja">
+    <div class="nota">Mockup web · CU-01 · no es la aplicación. Pantalla de nueva correspondencia para secretaría.</div>
+    <header>
+      <h1>Nueva correspondencia</h1>
+      <div>Secretaría</div>
+    </header>
+    <div class="cuerpo">
+      <aside>
+        <strong>Panel</strong>
+        <p>Correspondencia recibida</p>
+        <p>Nueva correspondencia</p>
+      </aside>
+      <main>
+        <label>Remitente</label>
+        <div class="campo"></div>
+        <label>Asunto (máximo 150 caracteres)</label>
+        <div class="campo"></div>
+        <div class="fila">
+          <div>
+            <label>Tipo de documento</label>
+            <div class="campo"></div>
+          </div>
+          <div>
+            <label>Fecha de recepción</label>
+            <div class="campo"></div>
+          </div>
+        </div>
+        <div class="boton">Guardar</div>
+        <table>
+          <tr><th>Correlativo</th><th>Remitente</th><th>Asunto</th><th>Fecha</th></tr>
+          <tr><td>CORR-0001</td><td>Remitente</td><td>Asunto</td><td>Fecha</td></tr>
+        </table>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
