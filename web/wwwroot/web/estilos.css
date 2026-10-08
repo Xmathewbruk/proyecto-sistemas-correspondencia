@@ -1,0 +1,119 @@
+:root {
+  --tinta: #1c2430;
+  --papel: #f3efe4;
+  --panel: #fffdf8;
+  --linea: #d9d0c1;
+  --marino: #1e3a4c;
+  --sello: #8e2f2f;
+  --ok: #1f6b45;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", Georgia, sans-serif;
+  color: var(--tinta);
+  background:
+    radial-gradient(circle at top left, #efe4cf, transparent 32%),
+    var(--papel);
+}
+
+.barra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: var(--marino);
+  color: #f7f1e6;
+}
+
+.barra a { color: inherit; }
+
+.marca {
+  margin: 0;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: #c98585;
+}
+
+.barra .marca { color: #e7c7a1; }
+
+.lienzo { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
+
+.trabajo {
+  display: grid;
+  grid-template-columns: minmax(320px, 1.1fr) minmax(280px, 0.9fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.tarjeta {
+  background: var(--panel);
+  border: 1px solid var(--linea);
+  padding: 1.25rem;
+  box-shadow: 0 16px 40px rgba(30, 58, 76, 0.06);
+}
+
+h1, h2 { margin: 0 0 0.8rem; }
+
+.encabezado-form {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: start;
+}
+
+label { display: block; font-size: 0.92rem; margin-top: 0.75rem; }
+
+input, select, button {
+  font: inherit;
+  width: 100%;
+  margin-top: 0.35rem;
+  padding: 0.7rem 0.75rem;
+  border: 1px solid var(--linea);
+  background: #fff;
+  color: inherit;
+}
+
+button {
+  width: auto;
+  margin-top: 1rem;
+  border: 0;
+  background: var(--marino);
+  color: #fff;
+  cursor: pointer;
+}
+
+button.secundario {
+  background: transparent;
+  color: var(--marino);
+  border: 1px solid var(--linea);
+}
+
+.fila { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+
+.contador, .error, .vacio { margin: 0.25rem 0 0; font-size: 0.85rem; }
+
+.contador { color: #6d6256; }
+
+.error { color: var(--sello); min-height: 1em; }
+
+.aviso {
+  margin-top: 0.8rem;
+  padding: 0.75rem 0.8rem;
+  display: none;
+}
+
+.aviso.error-general { display: block; background: #f8e8e6; color: var(--sello); }
+.aviso.ok { display: block; background: #e5f3eb; color: var(--ok); }
+
+table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+th, td { text-align: left; padding: 0.55rem 0.35rem; border-bottom: 1px solid var(--linea); vertical-align: top; }
+.oculto { display: none; }
+
+@media (max-width: 860px) {
+  .trabajo, .fila { grid-template-columns: 1fr; }
+}

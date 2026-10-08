@@ -5,11 +5,11 @@ title: Implementar
 labels: feature
 ---
 
-## Descripción
+## DescripciÃ³n
 
 ## Datos requeridos
 
-## Criterios de aceptación
+## Criterios de aceptaciÃ³n
 
 - 
 

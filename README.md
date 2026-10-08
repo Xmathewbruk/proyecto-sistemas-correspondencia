@@ -1,57 +1,26 @@
-# Registro de correspondencia recibida
+# Registro de correspondencia
 
-Proyecto de Sistemas. Caso de uso CU-01: la secretaría registra la correspondencia que ingresa, desde el panel web o desde la aplicación móvil, usando el mismo endpoint.
+Pareja de Proyecto de Sistemas. Un repositorio, dos productos: `web/` y `movil/`.
 
-## Cómo ejecutarlo
+## Flujo de trabajo
 
-Requisito: .NET 10.
+1. PERT: `docs/01-pert.md`
+2. CPM: `docs/02-cpm.md`
+3. Planner: `docs/03-planner.md`
+4. Historias de usuario: `docs/04-historias-de-usuario.md`
+5. Caso de uso: `docs/05-caso-de-uso.md`
+6. Issue #5 y milestone Iteración 01: `docs/06-issues-y-milestones.md`
+7. Ramas permanentes: `main` y `develop`
+8. Rama de la historia: `feature/5-web-correspondencia`
+9. Pull request hacia `develop`: https://github.com/Xmathewbruk/proyecto-sistemas-correspondencia/pull/7
+
+## Cómo ejecutar la web
 
 ```bash
+cd web
 dotnet run
 ```
 
-Abrir http://localhost:5080
+Abrir http://localhost:5080/web/
 
-- Panel web: http://localhost:5080/web/
-- Aplicación móvil: http://localhost:5080/movil/
-
-En ambas pantallas hay que ingresar como secretaría antes de registrar.
-
-## Trazabilidad
-
-Estructura de Descomposición del Trabajo ? Tarjeta en Planner ? Issue en GitHub ? Rama en Git ? Commits ? Pull Request ? Prueba por un compañero ? Integración en `develop`.
-
-| EDT | Planner | Issue | Rama |
-| --- | --- | --- | --- |
-| 3.1 | [3.1] #5 Registro web | #5 | `feature/5-web-correspondencia` |
-| 3.2 | [3.2] #6 Registro móvil | #6 | `feature/6-movil-correspondencia` |
-
-Las ramas salen de `develop`. El pull request apunta a `develop` e incluye `Closes #N`. La integración es squash and merge.
-
-## Estimación PERT
-
-Tiempo esperado = (optimista + 4 × probable + pesimista) / 6.
-
-| Tarea | Optimista | Probable | Pesimista | Esperado | Dependencia |
-| --- | --- | --- | --- | --- | --- |
-| Desarrollo web (API) | 2 h | 3 h | 6 h | 3.3 h | Ninguna |
-| Desarrollo móvil | 3 h | 4 h | 7 h | 4.3 h | Depende de la API web |
-
-La ruta crítica es el desarrollo web seguido del desarrollo móvil.
-
-## API
-
-`POST /api/correspondencias`
-
-```json
-{
-  "remitente": "Municipalidad",
-  "asunto": "Solicitud de informe",
-  "tipoDocumento": "Oficio",
-  "fechaRecepcion": "2026-10-08"
-}
-```
-
-Tipos válidos: Carta, Oficio, Memo, Factura, Otro. El asunto admite como máximo 150 caracteres. Si falta un dato obligatorio, la API responde 400 y no guarda el registro. Si el registro es válido, responde 201 con el correlativo automático `CORR-0001`.
-
-`GET /api/correspondencias` devuelve los registros guardados.
+La app móvil la construye el otro integrante en `movil/`.
