@@ -2,4 +2,4 @@ bin/
 obj/
 .vs/
 *.user
-data/*.json
+web/data/*.json

@@ -1,58 +1,26 @@
-# Registro de correspondencia recibida
+# Registro de correspondencia
 
-Proyecto de Sistemas. Caso de uso CU-01: la secretar铆a registra la correspondencia que ingresa, desde el panel web o desde la aplicaci贸n m贸vil, usando el mismo endpoint.
+Pareja de Proyecto de Sistemas. Un repositorio, dos productos: `web/` y `movil/`.
 
-## C贸mo ejecutarlo
+## Flujo de trabajo
 
-Requisito: .NET 10.
+1. PERT: `docs/01-pert.md`
+2. CPM: `docs/02-cpm.md`
+3. Planner: `docs/03-planner.md`
+4. Historias de usuario: `docs/04-historias-de-usuario.md`
+5. Caso de uso: `docs/05-caso-de-uso.md`
+6. Issue #5 y milestone Iteraci髇 01: `docs/06-issues-y-milestones.md`
+7. Ramas permanentes: `main` y `develop`
+8. Rama de la historia: `feature/5-web-correspondencia`
+9. Pull request hacia `develop`: https://github.com/Xmathewbruk/proyecto-sistemas-correspondencia/pull/7
+
+## C髆o ejecutar la web
 
 ```bash
+cd web
 dotnet run
 ```
 
-Abrir http://localhost:5080
+Abrir http://localhost:5080/web/
 
-- Panel web: http://localhost:5080/web/
-
-La pantalla m贸vil la implementa el otro integrante, en la rama `feature/6-movil-correspondencia`, despu茅s de que este pull request quede integrado en `develop`.
-
-En ambas pantallas hay que ingresar como secretar铆a antes de registrar.
-
-## Trazabilidad
-
-Estructura de Descomposici贸n del Trabajo ? Tarjeta en Planner ? Issue en GitHub ? Rama en Git ? Commits ? Pull Request ? Prueba por un compa帽ero ? Integraci贸n en `develop`.
-
-| EDT | Planner | Issue | Rama |
-| --- | --- | --- | --- |
-| 3.1 | [3.1] #5 Registro web | #5 | `feature/5-web-correspondencia` |
-| 3.2 | [3.2] #6 Registro m贸vil | #6 | `feature/6-movil-correspondencia` |
-
-Las ramas salen de `develop`. El pull request apunta a `develop` e incluye `Closes #N`. La integraci贸n es squash and merge.
-
-## Estimaci贸n PERT
-
-Tiempo esperado = (optimista + 4 脳 probable + pesimista) / 6.
-
-| Tarea | Optimista | Probable | Pesimista | Esperado | Dependencia |
-| --- | --- | --- | --- | --- | --- |
-| Desarrollo web (API) | 2 h | 3 h | 6 h | 3.3 h | Ninguna |
-| Desarrollo m贸vil | 3 h | 4 h | 7 h | 4.3 h | Depende de la API web |
-
-La ruta cr铆tica es el desarrollo web seguido del desarrollo m贸vil.
-
-## API
-
-`POST /api/correspondencias`
-
-```json
-{
-  "remitente": "Municipalidad",
-  "asunto": "Solicitud de informe",
-  "tipoDocumento": "Oficio",
-  "fechaRecepcion": "2026-10-08"
-}
-```
-
-Tipos v谩lidos: Carta, Oficio, Memo, Factura, Otro. El asunto admite como m谩ximo 150 caracteres. Si falta un dato obligatorio, la API responde 400 y no guarda el registro. Si el registro es v谩lido, responde 201 con el correlativo autom谩tico `CORR-0001`.
-
-`GET /api/correspondencias` devuelve los registros guardados.
+La app m髒il la construye el otro integrante en `movil/`.
