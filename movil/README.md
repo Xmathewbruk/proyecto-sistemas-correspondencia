@@ -20,3 +20,7 @@ Debe consumir la API de `web/`:
 Tipos v·lidos: Carta, Oficio, Memo, Factura, Otro. El asunto admite como m·ximo 150 caracteres. Si falta un dato, la API responde 400 y no guarda. Si el registro es v·lido, responde 201 con el correlativo.
 
 La aplicaciÛn mÛvil no se conecta directo a los datos. Solo usa la API.
+
+## Implementaci√≥n local
+
+Consulta [IMPLEMENTACION.md](IMPLEMENTACION.md) para ejecuci√≥n, configuraci√≥n Android y pruebas.
